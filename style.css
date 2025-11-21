@@ -22,59 +22,61 @@ p {
     line-height: 1.6;
 }
 
-/* ---------------- NAVBAR ---------------- */
+/* ---------------- HAMBURGER MENU ---------------- */
 
-.navbar {
-    width: 100%;
-    background-color: #2E1F27;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 30px;
-    position: sticky;
+.menu-icon {
+    font-size: 32px;
+    padding: 20px;
+    cursor: pointer;
+    position: fixed;
     top: 0;
-    z-index: 99;
+    left: 0;
+    z-index: 200;
+    color: #2E1F27;
 }
 
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.menu-overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 300;
+    top: 0;
+    left: 0;
+    background-color: rgba(46, 31, 39, 0.95);
+    overflow-x: hidden;
+    transition: 0.4s;
 }
 
-.logo-img {
-    height: 42px;
+.menu-overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 50px;
+    color: #F6F1EB;
 }
 
-.logo-text {
-    font-size: 1.6rem;
-    font-weight: bold;
-    letter-spacing: 2px;
+.menu-content {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    text-align: center;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    margin: 0;
+.menu-content a {
+    display: block;
+    margin: 20px 0;
+    font-size: 2rem;
+    color: #F6F1EB;
 }
 
-.nav-links a {
-    color: white;
-    padding-bottom: 4px;
-    font-size: 1rem;
+.menu-content a:hover {
+    color: #B9333A;
 }
 
-.nav-links a.active,
-.nav-links a:hover {
-    border-bottom: 2px solid #B9333A;
-}
-
-/* ---------------- HERO ---------------- */
+/* ---------------- HERO SECTION ---------------- */
 
 .hero {
-    height: 75vh;
+    height: 80vh;
     background: linear-gradient(rgba(46,31,39,0.4), rgba(46,31,39,0.4)),
                 url("images/erasure_poster.png") center/cover;
     display: flex;
@@ -83,10 +85,16 @@ p {
     text-align: center;
 }
 
+.hero-logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
 .hero-inner h1 {
     font-size: 3rem;
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
 }
 
 .hero-inner p {
@@ -98,17 +106,17 @@ p {
 .button {
     background-color: #B9333A;
     color: white;
-    padding: 12px 28px;
+    padding: 14px 32px;
     border-radius: 6px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     transition: 0.2s ease-in-out;
 }
 
 .button:hover {
-    background-color: #8d262c;
+    background-color: #8D262C;
 }
 
-/* ---------------- PAGE SECTIONS (shared) ---------------- */
+/* ---------------- SHARED PAGE CONTAINERS ---------------- */
 
 section {
     padding: 60px 20px;
@@ -146,7 +154,6 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    margin-top: 20px;
 }
 
 .calendar-month {
@@ -157,8 +164,7 @@ section {
 }
 
 .calendar-month h3 {
-    color: #2E1F27;
-    margin-bottom: 10px;
+    font-size: 1.4rem;
 }
 
 .empty {
@@ -192,12 +198,12 @@ section {
     border: none;
     padding: 10px 22px;
     border-radius: 6px;
-    font-size: 1rem;
     cursor: pointer;
 }
 
 .login-box button:hover {
-    background-color: #8d262c;
+    background-color: #8D262C;
 }
+
 
 
